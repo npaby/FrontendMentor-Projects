@@ -1,0 +1,137 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+}
+
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    padding: 2rem;
+}
+
+#app {
+    max-width: 1580px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+    height: 50vh;
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 3rem;
+
+}
+
+.grid-container > :first-child {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    background-color: mediumpurple;
+    color:white;
+}
+.grid-container > :nth-child(2) {
+    background-color: darkslategray;
+    color:white;
+}
+.grid-container > :nth-child(4) {
+    grid-column: 2 / 4;
+    background-color: midnightblue;
+    color:white;
+}
+
+.grid-container > :last-child {
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+}
+
+@media (max-width: 800px) {
+    .grid-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-gap: 3rem;
+    }
+
+    .grid-container > :first-child {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .grid-container > :nth-child(4) {
+        grid-column: 1 / 3;
+        grid-row: 3;
+    }
+
+    .grid-container > :last-child {
+        grid-column: 1 / 3;
+        grid-row: 4;
+    }
+
+}
+@media (max-width: 400px) {
+    .grid-container{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.container {
+    background-color: white;
+    color:black;
+    padding:2rem;
+    position: relative;
+    z-index: 0;
+    border-radius: 0.5rem;
+    text-align: left;
+    &.comma::after{
+        content: '"';
+        position: absolute;
+        right: 20px;
+        top: -60px;
+        font-size: 26.375rem;
+        line-height: 1;
+        pointer-events: none;
+        opacity: 0.1;
+    }
+    h1{
+        margin:0.4rem 0 1rem 0;
+        font-size:1.5rem;
+
+        padding:0;
+    }
+    article{
+        font-size: 1rem;
+    }
+}
+.attribution{
+    justify-self: center;
+    margin:2rem;
+}
+.header{
+    display: flex;
+    align-items: center;
+    img{
+        width:50px;
+        height:50px;
+        margin-right: 1rem;
+        border-radius: 100%;
+    }
+    div > *{
+        margin:0;
+        padding:0;
+        font-weight: normal;
+    }
+    div > h1{
+        font-size:1.2rem;
+    }
+    div > h2{
+        font-size:1rem;
+    }
+}
