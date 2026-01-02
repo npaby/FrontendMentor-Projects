@@ -31,7 +31,8 @@
 
 * {
     font-family: "Poppins", sans-serif;
-    margin: 0;
+}
+body{
     padding: 0 2rem;
 }
 header{
@@ -39,57 +40,43 @@ header{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-.cards-container{
-    display:grid;
-    grid-template-columns:1fr 1fr 1fr;
-    gap:1.5rem;
     padding:0;
+    * {
+        padding:0;
+    }
+    button{
+        padding: 0.25rem 1rem;
+        border: 1px solid black;
+        color: black;
+        border-radius: 40px;
+        background-color: white;
+    }
+    .buttons{
+        border: 2px solid black;
+        border-radius: 40px;
+        padding: 0.05rem;
+        box-shadow: 4px 4px black;
+    }
+    .not-selected-btn{
+        border: none;
+    }
+    .selected-btn{
+        background-color: #F8CB46;
+    }
+
 }
-.card-item{
-    display:flex;
-    flex-direction: column;
-    border: 1px solid black;
-    border-radius: 1rem;
-    align-content: flex-start;
+/*
+    For anything else
+*/
+.shadow{
     box-shadow: 4px 4px black;
-    padding:0;
-    h1{
-        font-size: 1.5rem;
-        border-bottom: 1px solid aqua;
-        padding: 1rem;
-    }
-    h2{
-        font-size: 1rem;
-        font-weight: normal;
-        opacity:0.4;
-        padding: 0 1rem;
-        margin:0;
-    }
-    article{
-        margin-bottom:auto;
-        padding: 1rem;
-    }
-    .card-item-bottom{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap:2rem;
-        padding:1rem;
-        font-size: 0.8rem;
-        .card-item-category{
-            padding:0.5rem 1rem;
-            border: 1px solid black;
-            border-radius: 50px;
-        }
-        progress{
-            width: 80px;
-            margin:0;
-        }
-    }
-
+    border: 1px solid black;
+    border-radius: 3.125rem;
 }
-
+.corner{
+    border-radius: 1rem;
+}
+/*For AllCards Layout*/
 form{
     display:flex;
     flex-direction: column;
@@ -106,9 +93,18 @@ form{
     input{
         padding:0.5rem 1rem;
         border-radius: 0.375rem;
-         #cardAnswwer{
-            height:150px;
-        }
+
+    }
+    textarea#cardAnswer{
+        height: 150px;
+        margin: 0;
+        text-align: left;
+        resize: none;
+        line-height: 1.2;
+        box-sizing: border-box;
+        padding: 0.5rem 1rem;
+        border-radius: 0.375rem;
+        border: 1.5px solid black;
     }
     button{
         border: 1px solid black;
@@ -117,5 +113,112 @@ form{
         font-size: 1rem;
         padding: 0.2rem 0.4rem;
         margin-bottom:0;
+        &.create-btn{
+            font-weight: bold;
+            background-color: #F8CB46;
+            &:before{
+                content: "";
+                display: inline-block;
+                width: 1em;
+                height: 1em;
+                margin-right: 0.2rem;
+                background: url("./assets/images/icon-circle-plus.svg");
+                vertical-align: middle;
+            }
+        }
     }
+}
+.cards-container{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:1.5rem;
+    padding:0;
+    .card-item{
+        display:flex;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 1rem;
+        align-content: flex-start;
+        padding:0;
+        h1{
+            font-size: 1.5rem;
+            border-bottom: 1px solid black;
+            padding: 0 1rem 0.2rem 1rem ;
+        }
+        h2{
+            font-size: 1rem;
+            font-weight: normal;
+            opacity:0.4;
+            padding: 0 1rem;
+            margin:0;
+        }
+        article{
+            margin-bottom:auto;
+            padding: 1rem;
+        }
+        .card-item-bottom{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap:1rem;
+            padding:1rem;
+            font-size: 0.8rem;
+            .card-item-category{
+                padding:0.5rem 1rem;
+            }
+            progress{
+                width: 80px;
+                margin:0;
+            }
+            .card-item-value{
+                margin:0;
+                padding:0;
+            }
+            .card-item-menu-btn{
+                margin-left:auto;
+                background-color:white;
+                border:none;
+            }
+        }
+
+    }
+}
+/*For Study Mode Layout*/
+.study-mode{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    height:80vh;
+    gap: 2rem;
+}
+.study-mode > *{
+    padding:2rem;
+
+}
+.study-mode .flashcard{
+    grid-column: 1/3;
+    background-color: #F8CB46;
+}
+.study-mode .flashcard .header{}
+.study-mode .flashcard .content{}
+.study-mode .flashcard .footer{}
+.study-mode .statistics{
+    background-color:#F8CB46;
+    /*display:grid;*/
+    /*grid-template-rows: 4rem auto;*/
+    display:flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.study-mode .statistics h1{
+    margin:0
+}
+.study-mode .statistics .data-container{
+    border: 1px solid black;
+    border-radius: 1rem;
+    height:100%;
+    padding:1rem;
+}
+.study-mode .statistics .data-container h1{
+    margin: 0;
+    font-size: 3rem;
 }

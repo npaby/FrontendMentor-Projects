@@ -1,21 +1,21 @@
 
 import './App.css'
-import data from './data.js'
-import CardItem from './components/CardItem.tsx'
-import CardForm from './components/CardForm.tsx'
 import CardHeader from './components/CardHeader.tsx'
+import AllCardsLayout from './layouts/AllCardsLayout.tsx'
+import StudyModeLayout from './layouts/StudyModeLayout.tsx'
+import * as React from 'react'
 
 function App() {
-	const cardContainer = data.flashcards.map((item) => <CardItem props={item}/>)
+	const [layoutMode, setLayoutMode] = React.useState<"AllCards" | "StudyMode">("StudyMode")
 	return (
 		<>
 			{/*<h1>Hello</h1>*/}
-			<CardHeader/>
-			<CardForm/>
-			{/*<!-- All Cards end -->*/}
-			<div className="cards-container">
-				{cardContainer}
-			</div>
+			<CardHeader setLayoutMode={setLayoutMode} currentLayout={layoutMode} />
+			{
+				layoutMode === "AllCards" ?
+					<AllCardsLayout/> :
+					<StudyModeLayout/>
+			}
 		</>
 	)
 }

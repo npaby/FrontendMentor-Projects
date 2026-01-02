@@ -5,10 +5,10 @@ export default function CardForm(){
 				<label>Question</label>
 				<input type="text" id="cardQuestion" placeholder="e.g., What is the capital of France?"/>
 				<label>Answer</label>
-				<input type="text" id="cardAnswwer" placeholder="e.g., Paris"/>
+				<textarea id="cardAnswer" className="cardAnswer" placeholder="e.g., Paris"></textarea>
 				<label>Category</label>
 				<input type="text" id="cardCategory" placeholder="e.g., Geography"/>
-				<button type="submit">Create Card</button>
+				<button type="submit" className="create-btn shadow">Create Card</button>
 			</form>
 		</>
 	)
