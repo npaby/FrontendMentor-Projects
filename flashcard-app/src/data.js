@@ -1,8 +1,8 @@
-{
+const data = {
   "flashcards": [
     {
       "id": "fc001",
-	    "question": "What does HTML stand for?",
+      "question": "What does HTML stand for?",
       "answer": "HyperText Markup Language",
       "category": "Web Development",
       "knownCount": 0
@@ -282,3 +282,4 @@
     }
   ]
 }
+export default data;

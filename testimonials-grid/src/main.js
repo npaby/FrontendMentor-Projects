@@ -90,7 +90,7 @@ document.querySelector('#app').innerHTML = `
 				<img src="../images/image-kira.jpg" alt="Kira Whittle"/>
 				<div>
 					<h1>
-						Jonathan Walters
+						Kira Whittle
 					</h1>
 					<h2>
 						Verified Graduate
@@ -109,7 +109,7 @@ document.querySelector('#app').innerHTML = `
   	</div>
   	<div class="attribution">
 		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-		Coded by <a href="#">Your Name Here</a>.
+		Coded by <a href="#">Neil Pabilonia</a>.
 	</div>
 `
 
