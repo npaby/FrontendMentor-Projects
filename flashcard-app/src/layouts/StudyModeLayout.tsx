@@ -1,9 +1,33 @@
 import * as React from 'react'
 import {DataContext, type DataContextProps} from '../contexts/DataContext.tsx'
+import type {CardItemProps} from '../data.ts'
 
 export default function StudyModeLayout() {
 	const dataProvided : DataContextProps = React.useContext(DataContext);
-	const curr = dataProvided.data[1]
+	const [isRevealed, setIsRevealed] = React.useState(false);
+	const style:string = isRevealed ? "revealed-style" : "hidden-style";
+	const curr:CardItemProps= dataProvided.data[1]
+
+	const content = (
+		<div className={style}>
+			<div className="category">{curr.category}</div>
+			<div className="main">
+
+				{
+					isRevealed
+						?   <h1>{curr.answer}</h1>
+						:   <>
+							<h1>{curr.question}</h1>
+							<button onClick={() => setIsRevealed(true)}>Click to reveal answer</button>
+						</>
+				}
+			</div>
+			<div className="progress">
+				<progress value={curr.knownCount} max={5} />
+				<span>{curr.knownCount}/5</span>
+			</div>
+		</div>
+	)
 	return(
 		<div className="study-mode">
 			<div className="flashcard corner shadow">
@@ -19,7 +43,15 @@ export default function StudyModeLayout() {
 					</button>
 				</div>
 				<div className="content">
-					{curr.id}
+					{content}
+				</div>
+				<div className="content-buttons">
+					<button>
+						I Know This
+					</button>
+					<button>
+						In Reset Progress
+					</button>
 				</div>
 				<div className="footer">
 
