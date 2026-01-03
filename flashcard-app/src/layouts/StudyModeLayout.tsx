@@ -1,12 +1,25 @@
+import * as React from 'react'
+import {DataContext, type DataContextProps} from '../contexts/DataContext.tsx'
+
 export default function StudyModeLayout() {
+	const dataProvided : DataContextProps = React.useContext(DataContext);
+	const curr = dataProvided.data[1]
 	return(
 		<div className="study-mode">
 			<div className="flashcard corner shadow">
 				<div className="header">
-
+					<button>
+						All Categories
+					</button>
+					<h1>
+						Hide Mastered
+					</h1>
+					<button className="shuffle-button">
+						Shuffle
+					</button>
 				</div>
 				<div className="content">
-
+					{curr.id}
 				</div>
 				<div className="footer">
 

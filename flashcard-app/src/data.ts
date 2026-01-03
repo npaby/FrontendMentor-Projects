@@ -1,5 +1,12 @@
-const data = {
-  "flashcards": [
+export type CardItemProps = {
+	id:string;
+	question:string;
+	answer:string;
+	category:string;
+	knownCount: number;
+}
+
+export const data: CardItemProps[] =  [
     {
       "id": "fc001",
       "question": "What does HTML stand for?",
@@ -281,5 +288,3 @@ const data = {
       "knownCount": 5
     }
   ]
-}
-export default data;

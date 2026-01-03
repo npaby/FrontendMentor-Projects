@@ -196,13 +196,46 @@ form{
 }
 .study-mode .flashcard{
     grid-column: 1/3;
-    background-color: #F8CB46;
+    /*background-color: #F8CB46;*/
+    padding:0;
 }
-.study-mode .flashcard .header{}
+
+
+
+.study-mode .flashcard .header{
+    /*height:5rem;*/
+    /*background-color: blue;*/
+    display:flex;
+    border-bottom: 2px solid black;
+    padding:0.4rem 1.2rem;
+    align-items: center;
+}
+.study-mode .flashcard .header :last-child{
+    margin-left:auto;
+}
+.study-mode .flashcard .header button{
+    font-size: 1rem;
+    border-radius:4rem;
+    padding:0.5rem;
+}
+.study-mode .flashcard .header .shuffle-button{
+    padding: 0.5rem 1rem;
+}
+.study-mode .flashcard .header .shuffle-button:before{
+    content: "";
+    margin-right: .5rem;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background: url("./assets/images/icon-shuffle.svg");
+    vertical-align: middle;
+}
+
+
 .study-mode .flashcard .content{}
 .study-mode .flashcard .footer{}
 .study-mode .statistics{
-    background-color:#F8CB46;
+    /*background-color:#F8CB46;*/
     /*display:grid;*/
     /*grid-template-rows: 4rem auto;*/
     display:flex;
