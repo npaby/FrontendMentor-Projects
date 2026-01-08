@@ -1,6 +1,7 @@
 import iconMenu from "../assets/images/icon-menu.svg";
+import type {CardItemProps} from '../types.ts'
 
-export default function CardItem({props}:any){
+export default function CardItem({ props }: {props:CardItemProps}) {
 
 	return(
 		<div className="card-item shadow" >

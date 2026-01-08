@@ -1,10 +1,4 @@
-export type CardItemProps = {
-	id:string;
-	question:string;
-	answer:string;
-	category:string;
-	knownCount: number;
-}
+import type {CardItemProps} from './types.ts'
 
 export const data: CardItemProps[] =  [
     {

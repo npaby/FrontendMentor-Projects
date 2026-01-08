@@ -242,17 +242,21 @@ form{
     flex: 1 1 auto;
     min-height: 0;
     display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .hidden-style,
 .revealed-style {
     flex: 1 1 auto;
-    width: 100%;
     display: flex;
     flex-direction: column;
     min-height: 0;
     padding: 2rem;
     text-align: center;
+    margin:2rem;
+    border-radius: 1rem;
+    border: 1px solid black;
 }
 .revealed-style {
     background-color: #92ADEB;
@@ -284,8 +288,24 @@ form{
 
 .study-mode .flashcard .content-buttons{
     text-align: center;
-    margin:1rem;
 }
+.study-mode .flashcard .content-buttons button{
+    background-color: white;
+}
+
+.study-mode .flashcard .footer{
+    padding:2rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.study-mode .flashcard .footer button{
+    background-color: white;
+    font-size: 1.2rem;
+    padding:0.5rem 1.2rem;
+}
+
 .study-mode .statistics{
     /*background-color:#F8CB46;*/
     /*display:grid;*/

@@ -1,7 +1,7 @@
-import {type JSX, useState} from 'react'
-import * as React from 'react'
+import {type JSX} from 'react'
+import type {CardHeaderProps} from '../types.ts'
 
-export default function CardHeader({setLayoutMode, currentLayout}:any): JSX.Element {
+export default function CardHeader({setLayoutMode, currentLayout}:CardHeaderProps): JSX.Element {
 
 	return(
 		<header>
